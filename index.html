@@ -14,11 +14,12 @@
             <a-assets>
                 <img src="./textures/Floor.jpg" id="floor">
                 <img src="./textures/Wall.jpg" id="wall">
+                <video muted id="myvideo" autoplay loop="true" src="assets/VideoAtom.mp4"></video>
             </a-assets>
 
             <!-- Camera -->
             <a-camera>
-                <a-cursor></a-cursor>
+                <a-cursor color = "#00FF00"></a-cursor>
             </a-camera>
 
             <!-- Planes -->
@@ -97,9 +98,9 @@
                 width= 1.5
                 height= 1.3
                 depth= 6
-            material="color: #000000"
-            rotation="0 90 0"
-            position="-9 1.7 -6"
+                material="color: #000000"
+                rotation="0 90 0"
+                position="-9 1.7 -6"
             >
             </a-box>
 
@@ -118,51 +119,98 @@
             <!--Info Menu-->
             
             <!-- Dalton -->
-            <a-entity>
-                <a-sphere
+            <a-text
+                value = "1. Teori Atom Dalton"
+                color = #ffffff
+                position = "6 0.6 -1.5"
+                rotation = "0 -90 0"
+                scale = "2 2 2"
+            ></a-text>
+            <a-entity
+            animation = "
+                property: position;
+                to : 0 -2 0;
+                dur : 1000;
+                loop : true;
+                dir : alternate;
+                startEvents : mouseenter;
+                pauseEvents : mouseleave;
+                resumeEvents : mouseenter;
+            "><a-sphere
                     radius = 1.5
                     material = "color: red"
-                    position = "9 4 1"
+                    position = "9 5.5 1"
                 ></a-sphere>
             </a-entity>
 
             <!-- Thomson -->
-            <a-entity>
-                <a-sphere
+            <a-text
+                value = "2. Teori Atom Thomson"
+                color = #ffffff
+                position = "6 0.6 -14.5"
+                rotation = "0 -90 0"
+                scale = "2 2 2"
+            ></a-text>
+            <a-entity
+                animation = "
+                    property: position;
+                    to : 0 -2 0;
+                    dur : 1000;
+                    loop : true;
+                    dir : alternate;
+                    startEvents : mouseenter;
+                    pauseEvents : mouseleave;
+                    resumeEvents : mouseenter;
+                "><a-sphere
                     radius = 1.5
                     material = "color: red"
-                    position = "9 4 -12"
+                    position = "9 5.5 -12"
                 ></a-sphere>
                 <a-sphere
                     radius = 0.5
                     material = "color: cyan"
-                    position = "9 5.4 -12"
+                    position = "9 6.9 -12"
                 ></a-sphere>
                 <a-sphere
                     radius = 0.5
                     material = "color: cyan"
-                    position = "10 4 -10.7"
+                    position = "10 5.5 -10.7"
                 ></a-sphere>
                 <a-sphere
                     radius = 0.5
                     material = "color: cyan"
-                    position = "8 3.7 -13"
+                    position = "8 5.2 -13"
                 ></a-sphere>
                 <a-sphere
                     radius = 0.5
                     material = "color: cyan"
-                    position = "8.3 3.1 -11"
+                    position = "8.3 4.6 -11"
                 ></a-sphere>
                 <a-sphere
                     radius = 0.5
                     material = "color: cyan"
-                    position = "10 3 -13"
+                    position = "10 4.5 -13"
                 ></a-sphere>
             </a-entity>
 
             <!-- Rutherford -->
-            <a-entity>
-                <a-torus
+            <a-text
+                value = "3. Teori Atom Rutherford"
+                color = #ffffff
+                position = "-6 0.6 2.8"
+                rotation = "0 90 0"
+                scale = "2 2 2"
+            ></a-text>
+            <a-entity  animation = "
+                property: position;
+                to : 0 -1 0;
+                dur : 1000;
+                loop : true;
+                dir : alternate;
+                startEvents : mouseenter;
+                pauseEvents : mouseleave;
+                resumeEvents : mouseenter;
+            "><a-torus
                     radius = 3
                     radius-tubular = 0.1
                     position = "-9 6 0"
@@ -199,7 +247,23 @@
             </a-entity>
 
             <!-- Bohr -->
-            <a-entity>
+            <a-text
+                value = "4. Teori Atom Bohr"
+                color = #ffffff
+                position = "-6 0.6 -10"
+                rotation = "0 90 0"
+                scale = "2 2 2"
+            ></a-text>
+            <a-entity  animation = "
+                property: position;
+                to : 0 0 1;
+                dur : 1000;
+                loop : true;
+                dir : alternate;
+                startEvents : mouseenter;
+                pauseEvents : mouseleave;
+                resumeEvents : mouseenter;
+            ">
                 <a-torus
                     radius = 3.7
                     radius-tubular = 0.1
@@ -236,6 +300,18 @@
                 ></a-sphere>
             </a-entity>
 
+            <!-- Mekanika Kuantum -->
+            <a-text
+                value = "5. Teori Atom Mekanika Kuantum"
+                color = #000000
+                position = "-3.2 1 -17.95"
+                rotation = "0 0 0"
+                scale = "2 2 2"
+            ></a-text>
+            <a-video
+                src = "#myvideo" width = 8 height = 6 position = "0 5 -17.8"
+            >
+            </a-video>
         </a-scene>
     </body>
 </html>
