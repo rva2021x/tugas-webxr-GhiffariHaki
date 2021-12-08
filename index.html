@@ -4,6 +4,7 @@
         <meta charset="utf-8">
 
         <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="assets/info-panel.js"></script>
 
         <title>Virtual Atom</title>
 
@@ -16,6 +17,7 @@
                 <img src="./textures/Wall.jpg" id="wall">
                 <video muted id="myvideo" autoplay loop="true" src="assets/VideoAtom.mp4"></video>
                 <img src="assets/BRUH.jpg" id="help">
+                <a-mixin
                     id="frame"
                     geometry="primitive: plane; width: 1; height: 1.5"
                     material="color: white; shader: flat"
@@ -328,24 +330,40 @@
                 
             <!-- Help Button -->
             <a-entity>
-                <a-entity id="daltonbutton" position = "6 2.1 -4.4" rotation = "0 -90 0" mixin = "frame">
+                <a-entity id="daltonButton" position = "6 2.1 -4.4" rotation = "0 -90 0" mixin = "frame" class = "menu-button">
                     <a-entity material = "src:#help;" mixin = poster ></a-entity>
                 </a-entity>
             </a-entity>
             <a-entity>
-                <a-entity id="thomsonbutton" position = "6 2.1 -7.6" rotation = "0 -90 0" mixin = "frame">
+                <a-entity id="thomsonButton" position = "6 2.1 -7.6" rotation = "0 -90 0" mixin = "frame" class = "menu-button">
                     <a-entity material = "src:#help;" mixin = poster ></a-entity>
                 </a-entity>
             </a-entity>
             <a-entity>
-                <a-entity id="rutherfordbutton" position = "-6 2.1 -4.4" rotation = "0 90 0" mixin = "frame">
+                <a-entity id="rutherfordButton" position = "-6 2.1 -4.4" rotation = "0 90 0" mixin = "frame" class = "menu-button">
                     <a-entity material = "src:#help;" mixin = poster ></a-entity>
                 </a-entity>
             </a-entity>
             <a-entity>
-                <a-entity id="bohrbutton" position = "-6 2.1 -7.6" rotation = "0 90 0" mixin = "frame">
+                <a-entity id="bohrButton" position = "-6 2.1 -7.6" rotation = "0 90 0" mixin = "frame" class = "menu-button">
                     <a-entity material = "src:#help;" mixin = poster ></a-entity>
                 </a-entity>
+            </a-entity>
+
+
+            <a-entity
+                id="infoPanel"
+                position="0 0 0.5"
+                info-panel
+                scale="0.001 0.001 0.001"
+                geometry="primitive: plane; width: 1.5; height: 1.8"
+                material="color: #333333; shader: flat; transparent: false">
+                <a-entity id="atomTitle"
+                position="-0.68 -0.1 0"
+                text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Ponyo (2003)"></a-entity>
+                <a-entity id="atomDescription"
+                position="-0.68 -0.2 0"
+                text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></a-entity>
             </a-entity>
         </a-scene>
     </body>
